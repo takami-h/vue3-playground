@@ -1,6 +1,6 @@
 import { createStore } from "vuex";
 
-type FormState = { name: null | string }
+export type FormState = { name: null | string }
 
 export default createStore<FormState>({
   state() {

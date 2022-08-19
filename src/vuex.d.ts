@@ -1,9 +1,7 @@
 import type { Store } from "vuex"
+import type { FormState } from './store/index'
 
 declare module '@vue/runtime-core' {
-  interface FormState {
-    name: string
-  }
   interface ComponentCustomProperties {
     $store: Store<FormState>
   }
