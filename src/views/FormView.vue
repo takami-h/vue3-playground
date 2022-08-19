@@ -1,13 +1,19 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useStore } from 'vuex';
+
+const store = useStore();
+
 const errors = ref<string[]>([]);
 let name = ref('');
+
 function handleSave(event: Event) {
   errors.value.splice(0);
   event.preventDefault();
   if (name.value.length <= 0) {
     errors.value.push('name is required.');
   }
+  store.commit('setName', name.value);
 }
 </script>
 
