@@ -6,11 +6,12 @@ import App from '../App.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 describe('App', () => {
-  const router = createRouter({
-    history: createWebHistory(),
-    routes: []
-  });
   it('should forward to /about on click', async () => {
+    const router = createRouter({
+      history: createWebHistory(),
+      routes: []
+    });
+
     const screen = render(App, { global: { plugins: [router] } });
     userEvent.click(screen.getByText('About'));
 
